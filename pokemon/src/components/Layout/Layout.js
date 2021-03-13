@@ -2,6 +2,9 @@ import React from "react";
 import styles from './Layout.module.css'
 
 const Layout = ({title, desc, urlBg, colorBg}) => {
+    const style = {};
+    if (urlBg) { style.backgroundImage = `url(${urlBg})`}
+    if (colorBg) { style.backgroundColor = colorBg }
     return(
         <section style={urlBg? {background: `url(${urlBg})`} : {background: colorBg}} className={styles.root}>
             <div className={styles.wrapper}>
