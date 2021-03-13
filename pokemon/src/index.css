@@ -7,6 +7,15 @@
   box-sizing: border-box;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
 @import 'https://fonts.googleapis.com/css?family=Overlock:400,400i,700|Oleo+Script';
 
 html, body {
