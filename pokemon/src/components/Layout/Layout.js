@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './Layout.module.css'
 
-const Layout = ({title, desc, urlBg, colorBg}) => {
+const Layout = ({title, desc, urlBg, colorBg, children}) => {
     const style = {};
     if (urlBg) { style.backgroundImage = `url(${urlBg})`}
     if (colorBg) { style.backgroundColor = colorBg }
@@ -16,6 +16,7 @@ const Layout = ({title, desc, urlBg, colorBg}) => {
                     <div className={`${styles.desc} ${styles.full}`}>
                         <p>{desc}</p>
                     </div>
+                    {children}
                 </article>
             </div>
         </section>
