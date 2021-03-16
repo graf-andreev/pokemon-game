@@ -16,7 +16,14 @@ function App() {
       <Layout colorBg='#e2e2e2'/>
       <div className='flex'>
           {
-            data.map(item => <PokemonCard key={item.id} props={item}/>)
+            data.map(item => <PokemonCard
+                key={item.id}
+                img={item.img}
+                id={item.id}
+                values={item.values}
+                name={item.name}
+                type={item.type}
+            />)
           }
       </div>
       <Layout urlBg={PictureBg}>

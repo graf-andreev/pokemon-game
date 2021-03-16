@@ -2,15 +2,14 @@ import React, {useState} from "react";
 import styles from './PokemonCard.module.css';
 import backImg from '../../img/card-back-side.jpg'
 
-const PokemonCard = ({props}) => {
+const PokemonCard = ({img, values, name, id, type}) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
     const handlerRotateCard = () => {
-        setIsOpen(true)
+        setIsOpen(!isOpen)
     }
 
-    const {img, values, name, id, type} = props
     return(
             <div className={styles.root}>
                   <div onClick={handlerRotateCard} className={`${styles.pokemonCard} ${isOpen? styles.active : ''}`}>
