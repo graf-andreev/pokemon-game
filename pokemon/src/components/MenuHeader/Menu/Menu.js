@@ -4,33 +4,31 @@ import cn from 'classnames';
 
  const Menu = ({isOpen}) => {
 
-
+    const routes = [
+        {
+            href: "#welcome",
+            text: 'HOME'
+        },
+        {
+            href: "#game",
+            text: 'GAME'
+        },
+        {
+            href: "#about",
+            text: 'ABOUT'
+        },
+        {
+            href: "#contact",
+            text: 'CONTACT'
+        },
+    ]
 
     return(
-        <div className={cn(styles.menuContainer, !isOpen ? styles.active : '') }>
+        <div className={cn(styles.menuContainer, !isOpen ? [styles.active ]: isOpen) }>
             <div className={styles.overlay}/>
             <div className={styles.menuItems}>
                 <ul>
-                    <li>
-                        <a href="#welcome">
-                            HOME
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#game">
-                            GAME
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#about">
-                            ABOUT
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact">
-                            CONTACT
-                        </a>
-                    </li>
+                    {routes.map(rout =>  <li><a href={rout.href}>{rout.text}</a></li>)}
                 </ul>
             </div>
         </div>
