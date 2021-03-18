@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import styles from './PokemonCard.module.css';
-import backImg from '../../img/card-back-side.jpg'
+import backImg from '../../img/card-back-side.jpg';
+import cn from 'classnames';
 
 const PokemonCard = ({img, values, name, id, type}) => {
 
@@ -10,17 +11,18 @@ const PokemonCard = ({img, values, name, id, type}) => {
         setIsOpen(!isOpen)
     }
 
+
     return(
             <div className={styles.root}>
-                  <div onClick={handlerRotateCard} className={`${styles.pokemonCard} ${isOpen? styles.active : ''}`}>
+                  <div onClick={handlerRotateCard} className={cn(styles.pokemonCard, {[styles.active] : isOpen}) }>
                     <div className={styles.cardFront}>
-                        <div className={`${styles.wrap} ${styles.front}`}>
-                            <div className={`${styles.pokemon} ${styles[type]} `}>
+                        <div className={cn(styles.wrap, styles.front)}>
+                            <div className={cn(styles.pokemon, styles[type])}>
                                 <div className={styles.values}>
-                                    <div className={`${styles.count} ${styles.top}`}>{values.top}</div>
-                                    <div className={`${styles.count} ${styles.right}`}>{values.right}</div>
-                                    <div className={`${styles.count} ${styles.bottom}`}>{values.bottom}</div>
-                                    <div className={`${styles.count} ${styles.left}`}>{values.left}</div>
+                                    <div className={cn(styles.count, styles.top)}>{values.top}</div>
+                                    <div className={cn(styles.count, styles.right)}>{values.right}</div>
+                                    <div className={cn(styles.count, styles.bottom)}>{values.bottom}</div>
+                                    <div className={cn(styles.count, styles.left)}>{values.left}</div>
                                 </div>
                                 <div className={styles.imgContainer}>
                                     <img src={img} alt={name} />
@@ -35,7 +37,7 @@ const PokemonCard = ({img, values, name, id, type}) => {
                     </div>
 
                     <div className={styles.cardBack}>
-                        <div className={`${styles.wrap} ${styles.back}`}>
+                        <div className={cn(styles.wrap, styles.back)}>
                             <img src={backImg} alt="Сard Backed" />
                         </div>
                     </div>
