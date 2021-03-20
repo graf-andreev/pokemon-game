@@ -1,11 +1,9 @@
 import '../../App.module.css';
 import Header from "../../components/Header/Header";
 import Layout from "../../components/Layout/Layout";
-import Footer from "../../components/Footer/Footer";
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import PictureBg from "../../img/bg1.jpg";
 import data from '../../data.json';
-import MenuHeader from "../../components/MenuHeader/MenuHeader";
 
 function HomePage({onChangePage}) {
 
