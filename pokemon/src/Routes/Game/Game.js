@@ -146,7 +146,7 @@ const GamePage = () =>{
         const result = pokemons.map(item => {
             if (item.id === e)
                 item["active"] = true;
-            return item});
+            return { ...item, active: item.active }});
         setPokemons(result);
     };
 
