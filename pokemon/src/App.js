@@ -6,7 +6,8 @@ import Footer from "./components/Footer/Footer";
 import About from "./Routes/About/About";
 import Contacts from "./Routes/Contacts/Contacts";
 import styles from './App.module.css';
-import cn from 'classnames'
+import cn from 'classnames';
+
 
 const App = () =>{
 
